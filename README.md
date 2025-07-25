@@ -18,9 +18,6 @@
 
 **PDF Viewer** is a simple desktop application that lets users view and store PDF documents locally in a structured directory. Built using Tauri, it provides a native feel across Windows and Linux platforms with minimal system footprint.
 
-It features ready-to-use CQRS, MediatR, authentication (JWT), background jobs (Hangfire), HealthChecks, Audit Logging, ResultKit, RepositoryKit, and more.  
-Designed for scalable, maintainable, and testable enterprise solutions.
-
 ---
 
 ![alt text](image.png)
@@ -46,15 +43,6 @@ Designed for scalable, maintainable, and testable enterprise solutions.
 - Node.js >= 18
 - Rust toolchain (cargo)
 - Tauri CLI (run cargo install create-tauri-app)
-
-### 2️⃣ Manual Clone
-
-Alternatively, you can clone the repository directly:
-
-```bash
-git clone https://github.com/taberkkaya/CleanArch.StarterKit.git
-cd CleanArch.StarterKit/src
-```
 
 ---
 
