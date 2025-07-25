@@ -1,45 +1,108 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+<div align="center">
+  <img src="assets/logo-1250x1250.png" width="120" alt="ResultKit logo" />
+  <h1>PdfViewer</h1>
+</div>
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
-
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
-
----
-
-## Edit a file
-
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
-
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+<p align="center">
+  <img src="https://img.shields.io/badge/Tauri-2.0-blue?logo=tauri" />
+  <img src="https://img.shields.io/badge/Vite-7.0-yellow?logo=vite" />
+  <img src="https://img.shields.io/badge/TypeScript-5.8-informational?logo=typescript" />
+  <img src="https://img.shields.io/badge/Rust-stable-orange?logo=rust" />
+  <img src="https://img.shields.io/badge/Node.js-20.x-green?logo=node.js" />
+  <img src="https://img.shields.io/badge/License-MIT-success" />
+</p>
 
 ---
 
-## Create a file
+## 📦 What is PDF Viewer?
 
-Next, you’ll add a new file to this repository.
+**PDF Viewer** is a simple desktop application that lets users view and store PDF documents locally in a structured directory. Built using Tauri, it provides a native feel across Windows and Linux platforms with minimal system footprint.
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
-
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+It features ready-to-use CQRS, MediatR, authentication (JWT), background jobs (Hangfire), HealthChecks, Audit Logging, ResultKit, RepositoryKit, and more.  
+Designed for scalable, maintainable, and testable enterprise solutions.
 
 ---
 
-## Clone a repository
+## 🧰 Technologies Used
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+| Technology      | Purpose                      |
+| --------------- | ---------------------------- |
+| Tauri 2.0       | Cross-platform desktop shell |
+| TypeScript      | UI logic                     |
+| Vite            | Frontend bundler             |
+| Rust            | Backend commands & I/O       |
+| @tauri-apps/api | Dialog & filesystem access   |
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+---
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+## 🚀 Getting Started
+
+### ✅ Prerequisites
+
+- Node.js >= 18
+- Rust toolchain (cargo)
+- Tauri CLI (run cargo install create-tauri-app)
+
+### 2️⃣ Manual Clone
+
+Alternatively, you can clone the repository directly:
+
+```bash
+git clone https://github.com/taberkkaya/CleanArch.StarterKit.git
+cd CleanArch.StarterKit/src
+```
+
+---
+
+## 🚀 Project Structure
+
+```plaintext
+📁 PdfViewer
+|
+├── 📁 src/                    → Frontend (HTML/TS)
+├── 📁 src-tauri/              → Tauri backend (Rust)
+|   ├── main.rs             → Command handlers
+|   └── tauri.conf.json     → App config & bundling
+```
+
+## 📅 Run Locally
+
+```bash
+# Clone the repo
+git clone https://github.com/taberkkaya/PdfViewer.git
+cd PdfViewer
+
+# Install dependencies
+npm install
+
+# Start dev server (Vite + Tauri)
+npm run tauri dev
+```
+
+## 🏠 Build Setup Files
+
+You can generate platform-specific installers:
+
+### **Windows Setup (.msi)**
+
+```bash
+npm run tauri build
+# Output: src-tauri/target/release/bundle/msi/PDF_Viewer_1.0.0_x64_en-US.msi
+```
+
+### **Linux Setup (.deb)**
+
+```bash
+npm run tauri build
+# Output: src-tauri/target/release/bundle/deb/expert-pdf-viewer_1.0.0_amd64.deb
+```
+
+> Note: On Linux, you must have dpkg, libwebkit2gtk, and other Tauri prerequisites installed.
+
+## ✨ Contribution
+
+Fork this repository and open a PR to contribute new features, improvements, or bugfixes!
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=tauri,typescript,rust,vite" />
+</p>

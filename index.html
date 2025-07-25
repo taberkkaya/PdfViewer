@@ -1,71 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
   <head>
     <meta charset="UTF-8" />
-    <title>Expert PDF Viewer</title>
+    <title>PDF Viewer</title>
     <style>
+      :root {
+        --primary: #00b894;
+        --bg: #f4f4f4;
+        --text: #333;
+        --header: #1a1a1a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
       body {
-        font-family: sans-serif;
         margin: 0;
         padding: 0;
-        background: #f7f7f7;
+        height: 100%;
+        font-family: "Segoe UI", sans-serif;
+        background: var(--bg);
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
       }
 
       header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #1a1a1a;
+        background: var(--header);
         color: white;
         padding: 1rem 2rem;
+        flex-shrink: 0;
       }
 
-      header h1 {
-        margin: 0;
-        font-size: 1.5rem;
+      .logo {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        gap: 0.5rem;
       }
 
       #uploadBtn {
-        background: #00b894;
+        background: var(--primary);
         border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
+        padding: 0.5rem 1.2rem;
+        border-radius: 6px;
         color: white;
         cursor: pointer;
-        font-weight: bold;
+        font-weight: 500;
+        transition: background 0.3s;
+      }
+
+      #uploadBtn:hover {
+        background: #019170;
       }
 
       main {
-        padding: 2rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 2rem;
+        overflow: hidden;
       }
 
       #pdfInput {
-        width: 100%;
-        padding: 0.75rem;
+        max-width: 600px;
+        margin: 0 auto 1rem auto;
+        padding: 0.75rem 1rem;
         font-size: 1rem;
-        margin-bottom: 1rem;
-        border-radius: 5px;
+        border-radius: 6px;
         border: 1px solid #ccc;
+        width: 100%;
       }
 
       #viewer {
+        flex: 1;
         width: 100%;
-        height: 80vh;
         border: 1px solid #ccc;
-        border-radius: 5px;
+        border-radius: 6px;
+        background: white;
       }
     </style>
   </head>
 
   <body>
     <header>
-      <h1>📄 Expert PDF Viewer</h1>
+      <div class="logo">
+        <span class="logo-icon">📄</span>
+        PDF Viewer
+      </div>
       <button id="uploadBtn">Yeni Döküman Ekle</button>
     </header>
 
     <main>
-      <input id="pdfInput" type="text" placeholder="PDF adı gir (örn: teklif)" />
-      <iframe id="viewer"></iframe>
+      <input
+        id="pdfInput"
+        type="text"
+        placeholder="PDF adı gir (örn: teklif)"
+      />
+      <iframe id="viewer" style="display: none"></iframe>
     </main>
 
     <script type="module" src="/src/main.ts"></script>
