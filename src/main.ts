@@ -11,6 +11,8 @@ const uploadBtn = document.getElementById("uploadBtn") as HTMLButtonElement;
 
 let basePdfPath: string;
 
+// await invoke("toggle_fullscreen");
+
 async function getBasePath() {
   basePdfPath = await invoke<string>("get_base_pdf_dir");
 }
@@ -102,9 +104,7 @@ uploadBtn.addEventListener("click", async () => {
   }
 });
 
-// input hep fokus kalsın
 input.focus();
-setInterval(() => input.focus(), 2000);
 
 await getBasePath();
 await loadInitialPdf();

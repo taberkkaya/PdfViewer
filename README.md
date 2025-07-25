@@ -23,6 +23,10 @@ Designed for scalable, maintainable, and testable enterprise solutions.
 
 ---
 
+![alt text](image.png)
+
+---
+
 ## 🧰 Technologies Used
 
 | Technology      | Purpose                      |

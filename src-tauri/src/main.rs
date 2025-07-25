@@ -106,6 +106,11 @@ fn get_platform_pdf_dir() -> PathBuf {
     }
 }
 
+#[tauri::command]
+fn toggle_fullscreen(window: tauri::Window) {
+    let _ = window.set_fullscreen(true);
+}
+
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_dialog::init())
@@ -113,6 +118,7 @@ fn main() {
             get_base_pdf_dir,
             ensure_pdf_folder_exists,
             copy_pdf_to_public,
+            toggle_fullscreen,
             read_pdf_as_base64,
             get_first_pdf_in_public,
             find_pdf_path_by_name
